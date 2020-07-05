@@ -11,6 +11,7 @@ from rest_framework.serializers import (
 
 User = get_user_model()
 
+# Handle a minimal user
 class UserCreateSerializer(ModelSerializer):
     class Meta:
         model = User
@@ -26,7 +27,7 @@ class UserCreateSerializer(ModelSerializer):
         }
     def create(self, validated_data):
         username = validated_data['username']
-        email = validated_data['email']
+        email    = validated_data['email']
         password = validated_data['password']
         user_obj = User(
                     username = username,
@@ -37,10 +38,10 @@ class UserCreateSerializer(ModelSerializer):
         return validated_data
 
 
-
+# Handle Login Info, generate/retrive token
 class UserLoginSerializer(ModelSerializer):
-    token = CharField(allow_blank=True, read_only=True)
-    username = CharField(allow_blank=False, required=True)
+    token    = CharField(allow_blank = True, read_only = True)
+    username = CharField(allow_blank = False, required = True)
 
     class Meta:
         model = User
