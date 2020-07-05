@@ -16,7 +16,7 @@ The user attributes and methods are completely implemented by the `userAccounts`
 
 - `/api/users/register/`   `["POST"]`  Register a new user.<br>
 Format
-```
+```json
 {
     "username":"t2",
     "email":"t2@t.com",
@@ -25,7 +25,7 @@ Format
 ```
 - `/api/users/login/`   `["POST"]`  Returns an API token for authenticated endpoints.<br>
 Format
-```
+```json
 {
     "username":"t2",
     "password":"testing321"
@@ -34,7 +34,7 @@ Format
 
 - `/api/quizzes/`   `["GET"]`  Returns a list of all quizzes(past, live, scheduled) with muted details.<br>
 Response JSON
-```
+```json
 [
     {
         "id": 1,
@@ -57,7 +57,7 @@ Response JSON
 
 - `/api/quizzes/<int:pk>/`   `["GET"]`   `authentication required`  Where pk is the id of the quiz. Returns the entire quiz body after hiding the `isCorrect` attribute of choices/text.<br>
 Response JSON
-```
+```json
 {
     "id": 2,
     "question_set": [
@@ -102,7 +102,7 @@ Response JSON
 
 - `/api/quizzes/save/`   `["POST"]`  `authentication required`  Used to save a user response. Checks are in place to see if the quiz is live and the quiz is not already submitted.<br>
 Format
-```
+```json
 {
     "quiz" : <int:quizID>,
     "question" : <int:questionID>,
@@ -112,7 +112,7 @@ Format
 
 - `/api/quizzes/submit/`   `["POST"]`   `authentication required`   Used to sumbit a quiz and write the evaluation to the PointTable in database.<br>
 Format
-```
+```json
 {
     "quiz" : <int:quizID>,
 }
