@@ -1,4 +1,4 @@
-## QUIZ API USING DJANGO
+# Quiz API Using Django
 
 ### Running the server
 Install the dependencies from requirements.txt and run the command
@@ -7,6 +7,10 @@ $ python3 manage.py makemigrations
 $ python3 manage.py migrate
 $ python3 manage.py runserver
 ```
+### Creating a quiz
+The quiz is easily created by an admin user by simply using the django admin page which is integrated using the `nested-admin` plugin.
+![example](https://github.com/maneeshpm/quizzer/blob/master/image.png?raw=true)
+
 ### Endpoints and usage
 The user attributes and methods are completely implemented by the `userAccounts` app and quiz is handled by the `quiz` app separately.
 
