@@ -4,7 +4,7 @@ django-nested-admin==3.3.2
 djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 Pillow==9.0.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 python-monkey-business==1.0.0
 pytz==2020.1
 six==1.15.0
